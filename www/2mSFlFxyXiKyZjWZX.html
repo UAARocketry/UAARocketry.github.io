@@ -1,0 +1,406 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAA Rocketry Team | University of Alaska Anchorage</title>
+  <style>
+    :root {
+      --uaa-green: #006847;
+      --uaa-gold: #FFB81C;
+      --uaa-dark: #1C2C1C;
+      --text: #333;
+      --light-bg: #f4f4f4;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--uaa-green), var(--uaa-dark));
+      color: white;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-container {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+
+    .logo-container img {
+      height: 60px;
+      width: auto;
+    }
+
+    .rocket-animation {
+      position: absolute;
+      right: 5%;
+      bottom: 0;
+      animation: launch 4s infinite;
+    }
+
+    @keyframes launch {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+
+      50% {
+        transform: translateY(-200px) rotate(5deg);
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+    }
+
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    nav {
+      background: var(--uaa-gold);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      max-width: 1200px;
+      margin: 0 auto;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--uaa-dark);
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--uaa-green);
+      color: white;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .feature-card {
+      background: var(--light-bg);
+      padding: 2rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--uaa-green);
+      text-align: left;
+      transition: transform 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .sponsors-section {
+      background: var(--light-bg);
+      padding: 3rem 1rem;
+      margin: 3rem 0;
+    }
+
+    .sponsors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 3rem auto;
+    }
+
+    .timeline-item {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background: var(--light-bg);
+      border-radius: 8px;
+      border-left: 4px solid var(--uaa-gold);
+    }
+
+    .cta {
+      background: var(--uaa-green);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+
+    .cta:hover {
+      background: var(--uaa-dark);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .team-member {
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .team-member img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      object-fit: cover;
+    }
+
+    footer {
+      background: var(--uaa-dark);
+      color: white;
+      padding: 3rem 1rem;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      color: white;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <img alt="UAA Logo - University seal in green and gold" src="uaa-logo.png" width="180" height="60">
+    </div>
+    <svg class="rocket-animation" width="100" height="100" viewBox="0 0 100 100">
+      <path d="M50 10 L60 40 L50 90 L40 40 Z" fill="var(--uaa-gold)" />
+      <circle cx="50" cy="40" r="10" fill="#ff4444" />
+      <path d="M45 90 L55 90 L50 100 Z" fill="#ff4444" />
+    </svg>
+    <div class="hero">
+      <h1>UAA Rocketry Team</h1>
+      <p>Engineering Excellence Through Aerospace Innovation</p>
+      <a href="https://uaarocketry.com/join" class="cta">Join Our Team</a>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="https://uaarocketry.com">Home</a></li>
+      <li><a href="https://uaarocketry.com/projects">Projects</a></li>
+      <li><a href="https://uaarocketry.com/team">Team</a></li>
+      <li><a href="https://uaarocketry.com/competitions">Competitions</a></li>
+      <li><a href="https://uaarocketry.com/sponsors">Sponsors</a></li>
+      <li><a href="https://uaarocketry.com/resources">Resources</a></li>
+      <li><a href="https://uaarocketry.com/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Current Projects</h2>
+      <div class="features">
+        <div class="feature-card">
+          <h3>NASA Student Launch</h3>
+          <p>Developing a high-powered rocket for NASA's annual competition, focusing on payload delivery and recovery
+            systems.</p>
+          <a href="https://uaarocketry.com/nasa-launch" class="cta">Learn More</a>
+        </div>
+
+        <div class="feature-card">
+          <h3>Spaceport America Cup</h3>
+          <p>Designing and building a rocket to compete in the world's largest intercollegiate rocket engineering
+            competition.</p>
+          <a href="https://uaarocketry.com/spaceport-cup" class="cta">View Progress</a>
+        </div>
+
+        <div class="feature-card">
+          <h3>Research & Development</h3>
+          <p>Exploring innovative propulsion systems and advanced composite materials for next-generation rockets.</p>
+          <a href="https://uaarocketry.com/research" class="cta">Research Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="achievements">
+      <h2>Recent Achievements</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>2024</h3>
+          <p>Successfully launched our 30,000 ft altitude rocket at Spaceport America Cup</p>
+        </div>
+        <div class="timeline-item">
+          <h3>2023</h3>
+          <p>2nd Place in Payload Design at NASA Student Launch Initiative</p>
+        </div>
+        <div class="timeline-item">
+          <h3>2022</h3>
+          <p>Best Technical Paper Award at IREC Competition</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sponsors-section">
+      <h2>Our Sponsors</h2>
+      <p>Thank you to our generous sponsors who make our projects possible:</p>
+      <div class="sponsors-grid">
+        <div>
+          <img alt="UAA College of Engineering logo in green and gold" src="sponsor1.png" width="200" height="100">
+        </div>
+        <div>
+          <img alt="Alaska Aerospace Corporation logo" src="sponsor2.png" width="200" height="100">
+        </div>
+        <div>
+          <img alt="Local Engineering Firm logo" src="sponsor3.png" width="200" height="100">
+        </div>
+      </div>
+      <p>Interested in sponsoring our team? <a href="https://uaarocketry.com/sponsor-us" class="cta">Become a
+          Sponsor</a></p>
+    </section>
+
+    <section class="team-section">
+      <h2>Leadership Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img alt="Team President portrait photo in business attire" src="president.jpg" width="200" height="200">
+          <h3>Sarah Johnson</h3>
+          <p>Team President</p>
+          <p>Mechanical Engineering '24</p>
+        </div>
+        <div class="team-member">
+          <img alt="Chief Engineer portrait photo in UAA team shirt" src="engineer.jpg" width="200" height="200">
+          <h3>Michael Chang</h3>
+          <p>Chief Engineer</p>
+          <p>Aerospace Engineering '23</p>
+        </div>
+        <div class="team-member">
+          <img alt="Project Manager portrait photo in casual professional attire" src="manager.jpg" width="200"
+            height="200">
+          <h3>David Miller</h3>
+          <p>Project Manager</p>
+          <p>Engineering Management '24</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h3>Contact Us</h3>
+        <p>UAA Rocketry Team</p>
+        <p>Engineering & Industry Building</p>
+        <p>University of Alaska Anchorage</p>
+        <p>3211 Providence Drive</p>
+        <p>Anchorage, AK 99508</p>
+        <p>Email: <a href="mailto:rocketry@alaska.edu">rocketry@alaska.edu</a></p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="https://uaarocketry.com/calendar">Team Calendar</a></li>
+          <li><a href="https://uaarocketry.com/documents">Documentation</a></li>
+          <li><a href="https://uaarocketry.com/safety">Safety Guidelines</a></li>
+          <li><a href="https://uaarocketry.com/media">Media Gallery</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="https://www.instagram.com/uaarocketry"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="https://www.linkedin.com/company/uaa-rocketry"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://www.youtube.com/uaarocketry"><i class="fab fa-youtube"></i> YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <p>© 2024 UAA Rocketry Team. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</body>
+
+</html>
