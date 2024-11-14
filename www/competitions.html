@@ -1,0 +1,420 @@
+<html>
+
+<head>
+  <base href="https://uaarocketry.com/competitions">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Competitions | UAA Rocketry Team</title>
+  <style>
+    :root {
+      --uaa-green: #006847;
+      --uaa-gold: #FFB81C;
+      --uaa-dark: #1C2C1C;
+      --text: #333;
+      --light-bg: #f4f4f4;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--uaa-green), var(--uaa-dark));
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .header-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.1;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23FFB81C" d="M50 5L20 95h60L50 5z"/></svg>') repeat;
+      animation: rocketFloat 20s linear infinite;
+    }
+
+    @keyframes rocketFloat {
+      from {
+        background-position: 0 0;
+      }
+
+      to {
+        background-position: 100px 100px;
+      }
+    }
+
+    nav {
+      background: var(--uaa-gold);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      max-width: 1200px;
+      margin: 0 auto;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--uaa-dark);
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--uaa-green);
+      color: white;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .competition-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .competition-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .competition-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-image {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .competition-status {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .status-upcoming {
+      background: var(--uaa-gold);
+      color: var(--uaa-dark);
+    }
+
+    .status-completed {
+      background: var(--uaa-green);
+      color: white;
+    }
+
+    .timeline {
+      position: relative;
+      margin: 4rem 0;
+      padding: 2rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background: var(--uaa-green);
+    }
+
+    .timeline-item {
+      margin: 2rem 0;
+      position: relative;
+      width: 50%;
+      padding: 0 2rem;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+
+    .timeline-content {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .achievements {
+      background: var(--light-bg);
+      padding: 3rem 0;
+      margin: 4rem 0;
+    }
+
+    .achievement-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .achievement-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .achievement-icon {
+      font-size: 3rem;
+      color: var(--uaa-gold);
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background: var(--uaa-dark);
+      color: white;
+      padding: 3rem 1rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-content a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-content a:hover {
+      color: var(--uaa-gold);
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .timeline::before {
+        left: 0;
+      }
+
+      .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-bg"></div>
+    <div class="header-content">
+      <h1>Competitions</h1>
+      <p>Our journey through collegiate rocketry competitions</p>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="https://uaarocketry.com">Home</a></li>
+      <li><a href="https://uaarocketry.com/projects">Projects</a></li>
+      <li><a href="https://uaarocketry.com/team">Team</a></li>
+      <li><a href="https://uaarocketry.com/competitions">Competitions</a></li>
+      <li><a href="https://uaarocketry.com/sponsors">Sponsors</a></li>
+      <li><a href="https://uaarocketry.com/resources">Resources</a></li>
+      <li><a href="https://uaarocketry.com/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="current-competitions">
+      <h2>Current & Upcoming Competitions</h2>
+      <div class="competition-grid">
+        <div class="competition-card">
+          <div class="card-image" style="background-image: url('nasa-competition.jpg')">
+            <span class="competition-status status-upcoming">Upcoming</span>
+          </div>
+          <div class="card-content">
+            <h3>NASA Student Launch 2024</h3>
+            <p>University-level rocket competition challenging students to design, build and fly high-powered rockets.
+            </p>
+            <p><strong>Location:</strong> Huntsville, Alabama</p>
+            <p><strong>Date:</strong> April 2024</p>
+          </div>
+        </div>
+
+        <div class="competition-card">
+          <div class="card-image" style="background-image: url('irec-competition.jpg')">
+            <span class="competition-status status-upcoming">Upcoming</span>
+          </div>
+          <div class="card-content">
+            <h3>Spaceport America Cup 2024</h3>
+            <p>World's largest intercollegiate rocket engineering competition.</p>
+            <p><strong>Location:</strong> Las Cruces, New Mexico</p>
+            <p><strong>Date:</strong> June 2024</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline">
+      <h2>Competition History</h2>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>2023</h3>
+          <p>NASA Student Launch</p>
+          <ul>
+            <li>Successfully launched to target altitude of 4,000 feet</li>
+            <li>Implemented innovative payload deployment system</li>
+            <li>Placed in top 15 universities nationwide</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>2022</h3>
+          <p>Spaceport America Cup</p>
+          <ul>
+            <li>Competed in 10,000 ft COTS category</li>
+            <li>Successful recovery system deployment</li>
+            <li>Technical Excellence award finalist</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>2021</h3>
+          <p>NASA Student Launch</p>
+          <ul>
+            <li>First-time participation</li>
+            <li>Successful qualification flights</li>
+            <li>Gained valuable competition experience</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="achievements">
+      <h2>Competition Achievements</h2>
+      <div class="achievement-cards">
+        <div class="achievement-card">
+          <div class="achievement-icon">🏆</div>
+          <h3>Technical Excellence</h3>
+          <p>Multiple awards for innovative design solutions and technical documentation</p>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-icon">🚀</div>
+          <h3>Successful Launches</h3>
+          <p>100% success rate in competition flight operations</p>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-icon">📊</div>
+          <h3>Data Analysis</h3>
+          <p>Recognition for outstanding flight data collection and analysis</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="get-involved">
+      <h2>Get Involved</h2>
+      <p>Interested in joining our competition teams? We're always looking for passionate students to contribute their
+        skills and ideas!</p>
+      <div style="margin-top: 2rem;">
+        <a href="https://uaarocketry.com/join"
+          style="background: var(--uaa-green); color: white; padding: 1rem 2rem; border-radius: 4px; text-decoration: none; display: inline-block;">Join
+          the Team</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="https://uaarocketry.com/about">About Us</a></li>
+          <li><a href="https://uaarocketry.com/projects">Our Projects</a></li>
+          <li><a href="https://uaarocketry.com/join">Join the Team</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="https://uaarocketry.com/resources/safety">Safety Guidelines</a></li>
+          <li><a href="https://uaarocketry.com/resources/documents">Documents</a></li>
+          <li><a href="https://uaarocketry.com/resources/tutorials">Tutorials</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Connect</h3>
+        <div class="social-links">
+          <a href="https://www.instagram.com/uaarocketry">Instagram</a>
+          <a href="https://www.linkedin.com/company/uaa-rocketry">LinkedIn</a>
+          <a href="https://www.youtube.com/uaarocketry">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <p>© 2024 UAA Rocketry Team. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

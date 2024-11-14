@@ -1,0 +1,353 @@
+<html>
+
+<head>
+  <base href="https://uaarocketry.com/contact">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | UAA Rocketry Team</title>
+  <style>
+    :root {
+      --uaa-green: #006847;
+      --uaa-gold: #FFB81C;
+      --uaa-dark: #1C2C1C;
+      --text: #333;
+      --light-bg: #f4f4f4;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--uaa-green), var(--uaa-dark));
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    nav {
+      background: var(--uaa-gold);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      max-width: 1200px;
+      margin: 0 auto;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--uaa-dark);
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--uaa-green);
+      color: white;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    .contact-form {
+      background: var(--light-bg);
+      padding: 2rem;
+      border-radius: 12px;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--uaa-dark);
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--uaa-green);
+      outline: none;
+    }
+
+    button {
+      background: var(--uaa-green);
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: var(--uaa-dark);
+    }
+
+    .contact-info {
+      padding: 2rem;
+    }
+
+    .contact-method {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-method h3 {
+      color: var(--uaa-green);
+      margin-bottom: 1rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      color: var(--uaa-green);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 2px solid var(--uaa-green);
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+
+    .social-links a:hover {
+      background: var(--uaa-green);
+      color: white;
+    }
+
+    .map-container {
+      margin-top: 3rem;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    footer {
+      background: var(--uaa-dark);
+      color: white;
+      padding: 3rem 1rem;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-content a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-content a:hover {
+      color: var(--uaa-gold);
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Contact Us</h1>
+    <p>Get in touch with the UAA Rocketry Team</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="https://uaarocketry.com">Home</a></li>
+      <li><a href="https://uaarocketry.com/projects">Projects</a></li>
+      <li><a href="https://uaarocketry.com/team">Team</a></li>
+      <li><a href="https://uaarocketry.com/competitions">Competitions</a></li>
+      <li><a href="https://uaarocketry.com/sponsors">Sponsors</a></li>
+      <li><a href="https://uaarocketry.com/resources">Resources</a></li>
+      <li><a href="https://uaarocketry.com/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="contact-grid">
+      <div class="contact-form">
+        <h2>Send us a Message</h2>
+        <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-method">
+          <h3>Location</h3>
+          <p>Engineering & Industry Building</p>
+          <p>University of Alaska Anchorage</p>
+          <p>3211 Providence Drive</p>
+          <p>Anchorage, AK 99508</p>
+        </div>
+
+        <div class="contact-method">
+          <h3>Email</h3>
+          <p>General Inquiries: <a href="mailto:rocketry@alaska.edu">rocketry@alaska.edu</a></p>
+          <p>Sponsorship: <a href="mailto:sponsorship@uaarocketry.com">sponsorship@uaarocketry.com</a></p>
+        </div>
+
+        <div class="contact-method">
+          <h3>Social Media</h3>
+          <div class="social-links">
+            <a href="https://www.instagram.com/uaarocketry">Instagram</a>
+            <a href="https://www.linkedin.com/company/uaa-rocketry">LinkedIn</a>
+            <a href="https://www.youtube.com/uaarocketry">YouTube</a>
+          </div>
+        </div>
+
+        <div class="contact-method">
+          <h3>Meeting Times</h3>
+          <p>General Team Meetings: Fridays at 5:00 PM</p>
+          <p>Technical Working Groups: Schedule varies</p>
+          <p>Location: Engineering & Industry Building, Room 214</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1916.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x56c8917604b33f41%3A0x5db3421e5bb2fb44!2sEngineering%20%26%20Industry%20Building!5e0!3m2!1sen!2sus!4v1660000000000!5m2!1sen!2sus"
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="https://uaarocketry.com/about">About Us</a></li>
+          <li><a href="https://uaarocketry.com/projects">Our Projects</a></li>
+          <li><a href="https://uaarocketry.com/join">Join the Team</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="https://uaarocketry.com/resources/safety">Safety Guidelines</a></li>
+          <li><a href="https://uaarocketry.com/resources/documents">Documents</a></li>
+          <li><a href="https://uaarocketry.com/resources/tutorials">Tutorials</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Connect</h3>
+        <p>Follow us on social media for the latest updates and behind-the-scenes content.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/uaarocketry">Instagram</a>
+          <a href="https://www.linkedin.com/company/uaa-rocketry">LinkedIn</a>
+          <a href="https://www.youtube.com/uaarocketry">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <p>© 2024 UAA Rocketry Team. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Form submission handling
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Basic form validation
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      if (!name || !email || !subject || !message) {
+        alert('Please fill in all fields');
+        return;
+      }
+
+      // Submit form
+      this.submit();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,221 @@
+<html>
+
+<head>
+  <base href="https://uaarocketry.com">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAA Rocketry Club - Blast Off!</title>
+  <style>
+    :root {
+      --primary: #003166;
+      --accent: #f7c748;
+      --text: #333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rocket-animation {
+      position: absolute;
+      right: 5%;
+      bottom: 0;
+      animation: launch 3s infinite;
+    }
+
+    @keyframes launch {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-100px) rotate(5deg);
+      }
+
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+    }
+
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    nav {
+      background: var(--accent);
+      padding: 1rem;
+    }
+
+    nav ul {
+      max-width: 1200px;
+      margin: 0 auto;
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .feature-card {
+      background: #f5f5f5;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .cta {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+
+    .cta:hover {
+      background: #004c99;
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <svg class="rocket-animation" width="100" height="100" viewBox="0 0 100 100">
+      <path d="M50 10 L60 40 L50 90 L40 40 Z" fill="var(--accent)" />
+      <circle cx="50" cy="40" r="10" fill="#ff4444" />
+      <path d="M45 90 L55 90 L50 100 Z" fill="#ff4444" />
+    </svg>
+    <div class="hero">
+      <div>
+        <h1>UAA Rocketry Club</h1>
+        <p>Reaching for the stars, one launch at a time</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="https://uaarocketry.com">Home</a></li>
+      <li><a href="https://uaarocketry.com/projects">Projects</a></li>
+      <li><a href="https://uaarocketry.com/team">Team</a></li>
+      <li><a href="https://uaarocketry.com/join">Join Us</a></li>
+      <li><a href="https://uaarocketry.com/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Welcome to UAA Rocketry</h2>
+    <p>We are a passionate group of students dedicated to aerospace engineering and rocketry. Join us as we push the
+      boundaries of what's possible in student rocketry!</p>
+
+    <div class="features">
+      <div class="feature-card">
+        <h3>Design & Build</h3>
+        <p>Learn hands-on rocket design and construction skills while working on real projects.</p>
+        <a href="https://uaarocketry.com/projects" class="cta">View Projects</a>
+      </div>
+
+      <div class="feature-card">
+        <h3>Compete</h3>
+        <p>Participate in national rocketry competitions and represent UAA against other universities.</p>
+        <a href="https://uaarocketry.com/competitions" class="cta">Our Competitions</a>
+      </div>
+
+      <div class="feature-card">
+        <h3>Learn</h3>
+        <p>Gain valuable experience in aerospace engineering, electronics, and project management.</p>
+        <a href="https://uaarocketry.com/resources" class="cta">Resources</a>
+      </div>
+    </div>
+
+    <section>
+      <h2>Recent Achievements</h2>
+      <p>Our team has successfully designed, built, and launched multiple high-powered rockets, achieving new heights in
+        student rocketry. Join us in our next mission!</p>
+      <a href="https://uaarocketry.com/join" class="cta">Join the Team</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 UAA Rocketry Club. All rights reserved.</p>
+    <p>University of Alaska Anchorage</p>
+    <p>Contact: <a href="mailto:rocketry@alaska.edu" style="color: white;">rocketry@alaska.edu</a></p>
+  </footer>
+
+</body>
+
+</html>

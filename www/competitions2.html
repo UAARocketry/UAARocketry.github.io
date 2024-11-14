@@ -1,0 +1,436 @@
+<html>
+
+<head>
+  <base href="https://uaarocketry.com/competition">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Competitions | UAA Rocketry Team</title>
+  <style>
+    :root {
+      --uaa-green: #006847;
+      --uaa-gold: #FFB81C;
+      --uaa-dark: hsl(120, 22%, 14%);
+      --text: #333;
+      --light-bg: #f4f4f4;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--uaa-green), var(--uaa-dark));
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    nav {
+      background: var(--uaa-gold);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      max-width: 1200px;
+      margin: 0 auto;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--uaa-dark);
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--uaa-green);
+      color: white;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .competition-section {
+      margin-bottom: 4rem;
+    }
+
+    .competition-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .competition-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .competition-header {
+      background: var(--uaa-green);
+      color: white;
+      padding: 1.5rem;
+    }
+
+    .competition-content {
+      padding: 2rem;
+    }
+
+    .competition-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .stat-card {
+      background: var(--light-bg);
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      color: var(--uaa-green);
+      font-weight: bold;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background: var(--uaa-gold);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+
+    .timeline-item {
+      padding: 1rem;
+      position: relative;
+      width: 50%;
+      margin: 2rem 0;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+
+    .timeline-content {
+      padding: 1.5rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 4rem 0;
+      background: var(--light-bg);
+      margin: 3rem 0;
+      border-radius: 12px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--uaa-green);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .cta-button:hover {
+      background: var(--uaa-dark);
+    }
+
+    footer {
+      background: var(--uaa-dark);
+      color: white;
+      padding: 3rem 1rem;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .timeline::after {
+        left: 31px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+      }
+
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Competitions</h1>
+    <p>Where Innovation Meets Competition</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="https://uaarocketry.com">Home</a></li>
+      <li><a href="https://uaarocketry.com/projects">Projects</a></li>
+      <li><a href="https://uaarocketry.com/team">Team</a></li>
+      <li><a href="https://uaarocketry.com/competitions">Competitions</a></li>
+      <li><a href="https://uaarocketry.com/sponsors">Sponsors</a></li>
+      <li><a href="https://uaarocketry.com/resources">Resources</a></li>
+      <li><a href="https://uaarocketry.com/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="competition-section">
+      <h2>NASA Student Launch</h2>
+      <div class="competition-card">
+        <div class="competition-header">
+          <h3>2023-2024 Competition</h3>
+          <p>Huntsville, Alabama</p>
+        </div>
+        <div class="competition-content">
+          <p>The NASA Student Launch is a research-based, competitive, experiential exploration activity. It strives to
+            provide relevant, cost-effective research and development of rocket propulsion systems.</p>
+
+          <div class="competition-stats">
+            <div class="stat-card">
+              <div class="stat-number">60+</div>
+              <p>Teams Nationwide</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">8</div>
+              <p>Month Project</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">5,600</div>
+              <p>Target Altitude (ft)</p>
+            </div>
+          </div>
+
+          <h4>Key Objectives:</h4>
+          <ul>
+            <li>Design, build, and fly a high-powered rocket</li>
+            <li>Develop payload experiments</li>
+            <li>Engage in NASA engineering design lifecycle</li>
+            <li>Complete technical documentation and reviews</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="competition-section">
+      <h2>Competition Timeline</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>Proposal Selection</h3>
+            <p>September 2023</p>
+            <p>Team proposal submitted and selected by NASA</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>PDR</h3>
+            <p>November 2023</p>
+            <p>Preliminary Design Review presentation and documentation</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>CDR</h3>
+            <p>January 2024</p>
+            <p>Critical Design Review milestone</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>FRR</h3>
+            <p>March 2024</p>
+            <p>Flight Readiness Review and final preparations</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>Launch Week</h3>
+            <p>April 2024</p>
+            <p>Competition launch in Huntsville, Alabama</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="competition-section">
+      <h2>Previous Competitions</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="competition2023.jpg" alt="Team photo at 2023 NASA Student Launch competition" width="300"
+            height="250">
+        </div>
+        <div class="gallery-item">
+          <img src="rocket2023.jpg" alt="2023 competition rocket on launch pad" width="300" height="250">
+        </div>
+        <div class="gallery-item">
+          <img src="payload2023.jpg" alt="2023 payload system demonstration" width="300" height="250">
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <h2>Want to Join Our Competition Team?</h2>
+      <p>We're always looking for passionate students to join our competition teams. No experience necessary!</p>
+      <a href="https://uaarocketry.com/join" class="cta-button">Join the Team</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="https://uaarocketry.com/about">About Us</a></li>
+          <li><a href="https://uaarocketry.com/projects">Our Projects</a></li>
+          <li><a href="https://uaarocketry.com/join">Join the Team</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="https://uaarocketry.com/resources/safety">Safety Guidelines</a></li>
+          <li><a href="https://uaarocketry.com/resources/documents">Documents</a></li>
+          <li><a href="https://uaarocketry.com/resources/tutorials">Tutorials</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <p>Email: rocketry@alaska.edu</p>
+        <p>Location: Engineering & Industry Building</p>
+        <p>University of Alaska Anchorage</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <p>© 2024 UAA Rocketry Team. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Animation for timeline items on scroll
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    const observerOptions = {
+      threshold: 0.5,
+      rootMargin: "0px"
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = "translateY(0)";
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    timelineItems.forEach(item => {
+      item.style.opacity = 0;
+      item.style.transform = "translateY(20px)";
+      item.style.transition = "all 0.5s ease-out";
+      observer.observe(item);
+    });
+  </script>
+</body>
+
+</html>
