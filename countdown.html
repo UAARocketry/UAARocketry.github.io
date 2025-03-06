@@ -1,159 +1,174 @@
-<html><head><base href="https://uaarocketry.com/#i%20love%20that%20design,%20just%20make%20it%20so%20it%20says%20were%20launching%20officialy%20relaunching%20the%20spring%20semester,%202025.%20so%20jan%2013,%202025%20">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Coming Soon | UAA Rocketry Team</title>
-<style>
-:root {
-  --uaa-green: #006847;
-  --uaa-gold: #FFB81C;
-  --uaa-dark: #1C2C1C;
-  --text: #333;
-  --light-bg: #f4f4f4;
-}
+<html>
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+<head>
+  <!-- <base href="https://uaarocketry.com/#i%20love%20that%20design,%20just%20make%20it%20so%20it%20says%20were%20launching%20officialy%20relaunching%20the%20spring%20semester,%202025.%20so%20jan%2013,%202025%20"> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coming Soon | UAA Rocketry Team</title>
+  <style>
+    :root {
+      --uaa-green: #006847;
+      --uaa-gold: #FFB81C;
+      --uaa-dark: #1C2C1C;
+      --text: #333;
+      --light-bg: #f4f4f4;
+    }
 
-body {
-  font-family: 'Source Sans Pro', sans-serif;
-  line-height: 1.6;
-  color: var(--text);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(135deg, var(--uaa-green), var(--uaa-dark));
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 2rem;
-  text-align: center;
-  color: white;
-}
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(135deg, var(--uaa-green), var(--uaa-dark));
+    }
 
-.logo-container {
-  margin-bottom: 2rem;
-}
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+      text-align: center;
+      color: white;
+    }
 
-.logo-container img {
-  height: 80px;
-  width: auto;
-}
+    .logo-container {
+      margin-bottom: 2rem;
+    }
 
-.rocket-animation {
-  width: 100px;
-  height: 100px;
-  margin: 2rem auto;
-  animation: launch 4s infinite;
-}
+    .logo-container img {
+      height: 80px;
+      width: auto;
+    }
 
-@keyframes launch {
-  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-  50% { transform: translateY(-100px) rotate(5deg); opacity: 0.5; }
-  100% { transform: translateY(0) rotate(0deg); opacity: 1; }
-}
+    .rocket-animation {
+      width: 100px;
+      height: 100px;
+      margin: 2rem auto;
+      animation: launch 4s infinite;
+    }
 
-h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
+    @keyframes launch {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
 
-.announcement {
-  font-size: 1.5rem;
-  margin: 1rem 0;
-  color: var(--uaa-gold);
-  font-weight: bold;
-}
+      50% {
+        transform: translateY(-100px) rotate(5deg);
+        opacity: 0.5;
+      }
 
-.countdown {
-  font-size: 2rem;
-  margin: 2rem 0;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
+      100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+    }
 
-.countdown-item {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  border-radius: 8px;
-  min-width: 120px;
-}
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
 
-.countdown-number {
-  font-size: 3rem;
-  font-weight: bold;
-  color: var(--uaa-gold);
-}
+    .announcement {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+      color: var(--uaa-gold);
+      font-weight: bold;
+    }
 
-.contact-info {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2rem;
-  border-radius: 8px;
-  margin: 2rem auto;
-  max-width: 600px;
-}
+    .countdown {
+      font-size: 2rem;
+      margin: 2rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
 
-.email {
-  color: var(--uaa-gold);
-  font-weight: bold;
-  font-size: 1.2rem;
-}
+    .countdown-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      border-radius: 8px;
+      min-width: 120px;
+    }
 
-.social-links {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
+    .countdown-number {
+      font-size: 3rem;
+      font-weight: bold;
+      color: var(--uaa-gold);
+    }
 
-.social-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.5rem;
-  padding: 0.5rem;
-  transition: color 0.3s;
-}
+    .contact-info {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem auto;
+      max-width: 600px;
+    }
 
-.social-links a:hover {
-  color: var(--uaa-gold);
-}
+    .email {
+      color: var(--uaa-gold);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
 
-footer {
-  margin-top: auto;
-  padding: 1rem;
-  text-align: center;
-  color: white;
-  font-size: 0.9rem;
-}
+    .social-links {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
 
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-  
-  .countdown {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .countdown-item {
-    min-width: auto;
-  }
-}
-</style>
+    .social-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: var(--uaa-gold);
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .countdown {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .countdown-item {
+        min-width: auto;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <div class="container">
     <!-- <div class="logo-container">
       <img alt="UAA Logo - University seal in green and gold" src="uaa-logo.png" width="240" height="80">
     </div> -->
-    
+
     <!-- <svg class="rocket-animation" viewBox="0 0 100 100">
       <path d="M50 10 L60 40 L50 90 L40 40 Z" fill="var(--uaa-gold)"/>
       <circle cx="50" cy="40" r="10" fill="#ff4444"/>
@@ -234,4 +249,6 @@ footer {
     setInterval(updateCountdown, 1000);
     updateCountdown(); // Initial call
   </script>
-</body></html>
+</body>
+
+</html>
